@@ -41,16 +41,16 @@ export function Navigation() {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className="fixed top-0 w-full z-50 bg-background/95 backdrop-blur-md border-b border-border/50"
     >
-          <div className="container mx-auto px-6 py-4">
+          <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
             <div className="flex items-center justify-between">
-              {/* Logo con animación */}
+              {/* Logo con animación - Optimizado para móvil */}
               <motion.div 
-                className="flex items-center space-x-3 cursor-pointer"
+                className="flex items-center space-x-2 sm:space-x-3 cursor-pointer"
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.2 }}
                 onClick={() => scrollToElement('hero', 0)}
               >
-                <div className="w-12 h-12 rounded-lg overflow-hidden shadow-lg">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg overflow-hidden shadow-lg">
                   <Image
                     src="/logo.jpg"
                     alt="INDIGO PRODUXION Logo"
@@ -61,7 +61,8 @@ export function Navigation() {
                     unoptimized
                   />
                 </div>
-                <span className="text-xl font-bold text-foreground">INDIGO PRODUXION</span>
+                <span className="text-lg sm:text-xl font-bold text-foreground hidden xs:block sm:block">INDIGO PRODUXION</span>
+                <span className="text-sm font-bold text-foreground block xs:hidden sm:hidden">INDIGO</span>
               </motion.div>
 
               {/* Enlaces de navegación con smooth scroll y estado activo */}
@@ -93,16 +94,18 @@ export function Navigation() {
                 ))}
               </div>
 
-              {/* Controles y botón CTA */}
-              <div className="flex items-center space-x-4">
-                <ThemeToggle />
-                <LanguageSwitcher />
+              {/* Controles y botón CTA - Optimizado para móvil */}
+              <div className="flex items-center space-x-2 sm:space-x-4">
+                <div className="hidden sm:flex items-center space-x-3">
+                  <ThemeToggle />
+                  <LanguageSwitcher />
+                </div>
                 
                 {/* Botón CTA - Solo desktop */}
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="hidden md:block"
+                  className="hidden lg:block"
                 >
                   <Button 
                     onClick={() => handleNavClick('contact')}

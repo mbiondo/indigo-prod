@@ -83,35 +83,37 @@ export function ServicesSection() {
   ];
 
   return (
-    <section id="services" className="py-20 px-6 bg-background">
+    <section id="services" className="py-16 sm:py-20 px-4 sm:px-6 bg-background">
       <div className="container mx-auto">
         {/* Título con animación */}
-        <SlideUp className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">{t('services.title')}</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-balance">
+        <SlideUp className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-3 sm:mb-4">{t('services.title')}</h2>
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto text-balance">
             {t('services.description')}
           </p>
         </SlideUp>
         
-        {/* Grid de servicios con animaciones escalonadas */}
+        {/* Grid de servicios con animaciones escalonadas - Optimizado para móvil */}
         <StaggerContainer 
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8"
           staggerDelay={0.1}
         >
           {services.map((service, index) => (
             <StaggerItem key={index}>
               <HoverCard 
-                hoverScale={1.05}
+                hoverScale={1.02}
                 className="h-full"
               >
-                <Card className="p-6 h-full bg-card border border-border group transition-all duration-300 hover:shadow-xl">
-                  <div className={`w-16 h-16 bg-gradient-to-br ${service.gradient} rounded-xl flex items-center justify-center mb-4 text-white shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                    {service.icon}
+                <Card className="p-4 sm:p-6 h-full bg-card border border-border group transition-all duration-300 hover:shadow-xl">
+                  <div className={`w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br ${service.gradient} rounded-xl flex items-center justify-center mb-3 sm:mb-4 text-white shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                    <div className="scale-75 sm:scale-100">
+                      {service.icon}
+                    </div>
                   </div>
-                  <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-indigo-700 transition-colors">
+                  <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-2 group-hover:text-indigo-700 transition-colors">
                     {service.title}
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                     {service.description}
                   </p>
                 </Card>

@@ -6,6 +6,8 @@ import { Menu, X } from 'lucide-react';
 import { useTranslation } from '@/hooks/useTranslation';
 import { useSmoothScroll } from '@/hooks/useScrollAnimations';
 import { useActiveSection } from '@/hooks/useActiveSection';
+import { ThemeToggle } from './theme-toggle';
+import { LanguageSwitcher } from './LanguageSwitcher';
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -62,17 +64,17 @@ export function MobileMenu({ isOpen, onToggle }: MobileMenuProps) {
               className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 md:hidden"
             />
 
-            {/* Menú deslizable */}
+            {/* Menú deslizable - Optimizado para móviles */}
             <motion.div
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="fixed top-0 right-0 h-full w-80 bg-background/98 backdrop-blur-xl border-l border-border/50 shadow-2xl z-50 md:hidden"
+              className="fixed top-0 right-0 h-full w-full max-w-sm bg-background/98 backdrop-blur-xl border-l border-border/50 shadow-2xl z-50 md:hidden"
             >
               <div className="flex flex-col h-full">
                 {/* Header del menú */}
-                <div className="flex items-center justify-between p-6 border-b border-border">
+                <div className="flex items-center justify-between p-4 sm:p-6 border-b border-border">
                   <h3 className="text-lg font-semibold">{t('navigation.menu')}</h3>
                   <button
                     onClick={onToggle}
@@ -84,8 +86,8 @@ export function MobileMenu({ isOpen, onToggle }: MobileMenuProps) {
                 </div>
 
                 {/* Enlaces de navegación */}
-                <nav className="flex-1 p-6 bg-background/98 backdrop-blur-xl">
-                  <ul className="space-y-4">
+                <nav className="flex-1 p-4 sm:p-6 bg-background/98 backdrop-blur-xl">
+                  <ul className="space-y-3">
                     {navLinks.map((link, index) => (
                       <motion.li
                         key={link.id}
@@ -95,14 +97,14 @@ export function MobileMenu({ isOpen, onToggle }: MobileMenuProps) {
                       >
                         <button
                           onClick={() => handleNavClick(link.id)}
-                          className={`w-full text-left p-3 rounded-lg transition-all duration-200 ${
+                          className={`w-full text-left p-4 rounded-lg transition-all duration-200 ${
                             isLinkActive(link.id)
                               ? 'bg-indigo-50 dark:bg-indigo-950 text-indigo-600 font-medium'
                               : 'hover:bg-muted'
                           }`}
                         >
                           <div className="flex items-center justify-between">
-                            <span>{t(link.translationKey)}</span>
+                            <span className="text-base">{t(link.translationKey)}</span>
                             {isLinkActive(link.id) && (
                               <motion.div
                                 layoutId="mobileActiveIndicator"
@@ -118,8 +120,15 @@ export function MobileMenu({ isOpen, onToggle }: MobileMenuProps) {
                   </ul>
                 </nav>
 
-                {/* CTA Button */}
-                <div className="p-6 border-t border-border bg-background/98 backdrop-blur-xl">
+                {/* Controles móviles */}
+                <div className="p-4 sm:p-6 border-t border-border bg-background/98 backdrop-blur-xl">
+                  {/* Theme y Language toggles para móvil */}
+                  <div className="flex justify-center items-center space-x-6 mb-4 sm:hidden">
+                    <ThemeToggle />
+                    <LanguageSwitcher />
+                  </div>
+                  
+                  {/* CTA Button */}
                   <motion.button
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}

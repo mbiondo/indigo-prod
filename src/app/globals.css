@@ -274,3 +274,88 @@
   transform: translateZ(0);
   will-change: transform, opacity;
 }
+
+/* Mejoras específicas para móviles */
+@media (max-width: 640px) {
+  /* Ajustar tamaños de fuente para móviles */
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* Mejorar touch targets */
+  button, 
+  a[role="button"],
+  .mobile-menu button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Optimizar espaciado en contenedores */
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Mejorar legibilidad en tarjetas */
+  .card-mobile {
+    padding: 1rem;
+    border-radius: 0.75rem;
+  }
+  
+  /* Ajustar animaciones para móviles */
+  .motion-reduce-mobile {
+    animation-duration: 0.3s;
+  }
+}
+
+/* Mejoras para tablets */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+/* Optimización para pantallas táctiles */
+@media (hover: none) and (pointer: coarse) {
+  /* Ajustar hover effects para touch devices */
+  .hover\:scale-105:hover {
+    transform: scale(1.02);
+  }
+  
+  .hover\:shadow-xl:hover {
+    box-shadow: 0 10px 25px -3px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.05);
+  }
+  
+  /* Mejorar interacciones táctiles */
+  button:active,
+  .tap-highlight:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
+}
+
+/* Ocultar scrollbars personalizados en móviles */
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  
+  html {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Breakpoint personalizado para pantallas extra pequeñas */
+@media (max-width: 360px) {
+  .text-xs-mobile {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+  
+  .px-xs-mobile {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}

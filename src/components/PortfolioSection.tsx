@@ -67,26 +67,27 @@ export function PortfolioSection() {
   ];
 
   return (
-    <section id="portfolio" className="py-20 px-6">
+    <section id="portfolio" className="py-16 sm:py-20 px-4 sm:px-6">
       <div className="container mx-auto">
         {/* Título con animación */}
-        <SlideUp className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">{t('portfolio.title')}</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-balance">
+        <SlideUp className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-3 sm:mb-4">{t('portfolio.title')}</h2>
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto text-balance">
             {t('portfolio.description')}
           </p>
         </SlideUp>
         
-        {/* Grid de proyectos con animaciones escalonadas */}
+        {/* Grid de proyectos con animaciones escalonadas - Optimizado para móvil */}
         <StaggerContainer 
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
           staggerDelay={0.15}
         >
           {projects.map((project, index) => (
             <StaggerItem key={index}>
               <motion.div 
                 className="group relative overflow-hidden rounded-xl cursor-pointer"
-                whileHover={{ y: -8 }}
+                whileHover={{ y: -4 }}
+                whileTap={{ scale: 0.98 }}
                 transition={{ duration: 0.3, ease: "easeOut" }}
               >
                 <div className="aspect-[4/3] bg-muted">
@@ -107,17 +108,17 @@ export function PortfolioSection() {
                   transition={{ duration: 0.3 }}
                 />
                 
-                {/* Contenido que aparece en hover */}
+                {/* Contenido que aparece en hover/touch */}
                 <motion.div 
-                  className="absolute bottom-0 left-0 right-0 p-6 text-white"
+                  className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 text-white"
                   initial={{ y: 20, opacity: 0 }}
                   whileHover={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.3, ease: "easeOut" }}
                 >
-                  <Badge className="bg-white/20 backdrop-blur-sm text-white border-white/30 mb-2">
+                  <Badge className="bg-white/20 backdrop-blur-sm text-white border-white/30 mb-2 text-xs">
                     {project.category}
                   </Badge>
-                  <h3 className="text-xl font-semibold">{project.title}</h3>
+                  <h3 className="text-lg sm:text-xl font-semibold">{project.title}</h3>
                 </motion.div>
                 
                 {/* Efecto de brillo en hover */}
