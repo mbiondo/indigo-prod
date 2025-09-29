@@ -1,0 +1,150 @@
+{
+  "navigation": {
+    "services": "Servicios",
+    "portfolio": "Portfolio",
+    "contact": "Contacto",
+    "bookSession": "Reservar Sesión",
+    "toggleTheme": "Cambiar tema"
+  },
+  "hero": {
+    "badge": "🎵 Estudio de Producción Audiovisual",
+    "title": "Creamos",
+    "titleHighlight": "experiencias",
+    "titleEnd": "audiovisuales",
+    "description": "En INDIGO PRODUXION transformamos ideas en obras maestras audiovisuales. Desde grabación musical y video hasta masterización y post-producción, creamos contenido único que conecta con el alma.",
+    "playDemo": "Escuchar Demo Reel",
+    "bookStudio": "Reservar Estudio",
+    "tracksProduced": "+500 Tracks",
+    "produced": "Producidos"
+  },
+  "services": {
+    "title": "Servicios Audiovisuales",
+    "description": "Servicios completos de producción musical y audiovisual para artistas, bandas y creadores de contenido",
+    "recording": {
+      "title": "Grabación Profesional",
+      "description": "Estudio acústicamente tratado con equipos de alta gama para capturar el mejor sonido"
+    },
+    "mixing": {
+      "title": "Mezcla y Masterización",
+      "description": "Procesamiento profesional que da vida y claridad a tus grabaciones"
+    },
+    "production": {
+      "title": "Producción Musical",
+      "description": "Desarrollo completo de arreglos, instrumentación y dirección artística"
+    },
+    "postAudio": {
+      "title": "Post-Producción Audio",
+      "description": "Edición, limpieza y optimización de audio para cualquier formato"
+    },
+    "podcast": {
+      "title": "Podcast & Locución",
+      "description": "Grabación y producción de podcasts, audiolibros y contenido hablado"
+    },
+    "collaborative": {
+      "title": "Sesiones Colaborativas",
+      "description": "Espacios para bandas y artistas que buscan crear música en conjunto"
+    },
+    "videoRecording": {
+      "title": "Grabación de Video",
+      "description": "Producción de videoclips musicales y contenido audiovisual profesional"
+    },
+    "videoEditing": {
+      "title": "Edición de Video",
+      "description": "Post-producción completa, efectos visuales y color grading profesional"
+    },
+    "audiovisualProduction": {
+      "title": "Producción Audiovisual",
+      "description": "Dirección y producción integral de contenido multimedia y comercial"
+    },
+    "photography": {
+      "title": "Fotografía Musical",
+      "description": "Sesiones fotográficas profesionales para artistas y material promocional"
+    },
+    "liveAudio": {
+      "title": "Ingeniería de Audio en Vivo",
+      "description": "Sonorización profesional para conciertos, eventos y presentaciones en directo"
+    }
+  },
+  "portfolio": {
+    "title": "Portfolio Audiovisual",
+    "description": "Una selección de nuestras producciones musicales y audiovisuales más recientes",
+    "projects": {
+      "indieAlbum": {
+        "title": "Álbum Indie Rock",
+        "category": "Producción Completa"
+      },
+      "latinSingle": {
+        "title": "Single Pop Latino",
+        "category": "Mezcla & Master"
+      },
+      "electronicEP": {
+        "title": "EP Electrónico",
+        "category": "Producción Musical"
+      },
+      "podcast": {
+        "title": "Podcast Semanal",
+        "category": "Audio Post-Producción"
+      },
+      "musicVideo": {
+        "title": "Videoclip Musical",
+        "category": "Producción Audiovisual"
+      },
+      "photoSession": {
+        "title": "Sesión Fotográfica",
+        "category": "Fotografía Musical"
+      },
+      "soundtrack": {
+        "title": "Banda Sonora",
+        "category": "Composición Original"
+      },
+      "commercial": {
+        "title": "Comercial Televisivo",
+        "category": "Edición de Video"
+      }
+    }
+  },
+  "cta": {
+    "title": "¿Listo para llevar tu proyecto al siguiente nivel?",
+    "description": "Contactanos hoy y descubre cómo podemos ayudarte a materializar tus ideas digitales",
+    "contactNow": "Contactar ahora",
+    "viewPortfolio": "Ver portfolio"
+  },
+  "contact": {
+    "title": "Contacto y Ubicación",
+    "description": "Visitanos en nuestro estudio o contactanos para agendar tu sesión",
+    "contactInfo": "Información de Contacto",
+    "location": "Ubicación",
+    "howToGet": "Cómo llegar",
+    "bookAppointment": "Agendar Cita",
+    "address": {
+      "title": "Dirección",
+      "line1": "Av. Producción Musical 123",
+      "line2": "Col. Audiovisual, CDMX 01234",
+      "line3": "México"
+    },
+    "phone": {
+      "title": "Teléfono",
+      "main": "+52 55 1234 5678",
+      "whatsapp": "WhatsApp: +52 55 8765 4321"
+    },
+    "email": {
+      "title": "Email",
+      "info": "info@indigoproduxion.com",
+      "reservations": "reservas@indigoproduxion.com"
+    },
+    "hours": {
+      "title": "Horarios",
+      "weekdays": "Lun - Vie: 9:00 AM - 10:00 PM",
+      "weekends": "Sáb - Dom: 10:00 AM - 8:00 PM"
+    },
+    "transport": {
+      "metro": "🚇 Metro: Estación Bellas Artes (Líneas 2 y 8)",
+      "metrobus": "🚌 Metrobús: Estación Bellas Artes",
+      "parking": "🚗 Estacionamiento disponible en el edificio",
+      "accessibility": "♿ Acceso para personas con discapacidad"
+    }
+  },
+  "footer": {
+    "copyright": "© 2024 INDIGO PRODUXION"
+  }
+}

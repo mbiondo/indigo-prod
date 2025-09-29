@@ -1,0 +1,150 @@
+{
+  "navigation": {
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "contact": "Contact",
+    "bookSession": "Book Session",
+    "toggleTheme": "Toggle theme"
+  },
+  "hero": {
+    "badge": "🎵 Audiovisual Production Studio",
+    "title": "We create",
+    "titleHighlight": "audiovisual",
+    "titleEnd": "experiences",
+    "description": "At INDIGO PRODUXION we transform ideas into audiovisual masterpieces. From music and video recording to mastering and post-production, we create unique content that connects with the soul.",
+    "playDemo": "Play Demo Reel",
+    "bookStudio": "Book Studio",
+    "tracksProduced": "+500 Tracks",
+    "produced": "Produced"
+  },
+  "services": {
+    "title": "Audiovisual Services",
+    "description": "Complete music and audiovisual production services for artists, bands and content creators",
+    "recording": {
+      "title": "Professional Recording",
+      "description": "Acoustically treated studio with high-end equipment to capture the best sound"
+    },
+    "mixing": {
+      "title": "Mixing & Mastering",
+      "description": "Professional processing that brings life and clarity to your recordings"
+    },
+    "production": {
+      "title": "Music Production",
+      "description": "Complete development of arrangements, instrumentation and artistic direction"
+    },
+    "postAudio": {
+      "title": "Audio Post-Production",
+      "description": "Editing, cleaning and audio optimization for any format"
+    },
+    "podcast": {
+      "title": "Podcast & Voice-over",
+      "description": "Recording and production of podcasts, audiobooks and spoken content"
+    },
+    "collaborative": {
+      "title": "Collaborative Sessions",
+      "description": "Spaces for bands and artists who seek to create music together"
+    },
+    "videoRecording": {
+      "title": "Video Recording",
+      "description": "Production of music videos and professional audiovisual content"
+    },
+    "videoEditing": {
+      "title": "Video Editing",
+      "description": "Complete post-production, visual effects and professional color grading"
+    },
+    "audiovisualProduction": {
+      "title": "Audiovisual Production",
+      "description": "Comprehensive direction and production of multimedia and commercial content"
+    },
+    "photography": {
+      "title": "Music Photography",
+      "description": "Professional photo sessions for artists and promotional material"
+    },
+    "liveAudio": {
+      "title": "Live Audio Engineering",
+      "description": "Professional sound reinforcement for concerts, events and live presentations"
+    }
+  },
+  "portfolio": {
+    "title": "Audiovisual Portfolio",
+    "description": "A selection of our most recent music and audiovisual productions",
+    "projects": {
+      "indieAlbum": {
+        "title": "Indie Rock Album",
+        "category": "Full Production"
+      },
+      "latinSingle": {
+        "title": "Latin Pop Single",
+        "category": "Mixing & Master"
+      },
+      "electronicEP": {
+        "title": "Electronic EP",
+        "category": "Music Production"
+      },
+      "podcast": {
+        "title": "Weekly Podcast",
+        "category": "Audio Post-Production"
+      },
+      "musicVideo": {
+        "title": "Music Video",
+        "category": "Audiovisual Production"
+      },
+      "photoSession": {
+        "title": "Photo Session",
+        "category": "Music Photography"
+      },
+      "soundtrack": {
+        "title": "Soundtrack",
+        "category": "Original Composition"
+      },
+      "commercial": {
+        "title": "TV Commercial",
+        "category": "Video Editing"
+      }
+    }
+  },
+  "cta": {
+    "title": "Ready to take your project to the next level?",
+    "description": "Contact us today and discover how we can help you materialize your digital ideas",
+    "contactNow": "Contact now",
+    "viewPortfolio": "View portfolio"
+  },
+  "contact": {
+    "title": "Contact & Location",
+    "description": "Visit us at our studio or contact us to schedule your session",
+    "contactInfo": "Contact Information",
+    "location": "Location",
+    "howToGet": "How to get there",
+    "bookAppointment": "Book Appointment",
+    "address": {
+      "title": "Address",
+      "line1": "123 Music Production Ave",
+      "line2": "Audiovisual District, CDMX 01234",
+      "line3": "Mexico"
+    },
+    "phone": {
+      "title": "Phone",
+      "main": "+52 55 1234 5678",
+      "whatsapp": "WhatsApp: +52 55 8765 4321"
+    },
+    "email": {
+      "title": "Email",
+      "info": "info@indigoproduxion.com",
+      "reservations": "reservations@indigoproduxion.com"
+    },
+    "hours": {
+      "title": "Hours",
+      "weekdays": "Mon - Fri: 9:00 AM - 10:00 PM",
+      "weekends": "Sat - Sun: 10:00 AM - 8:00 PM"
+    },
+    "transport": {
+      "metro": "🚇 Metro: Bellas Artes Station (Lines 2 & 8)",
+      "metrobus": "🚌 Metrobus: Bellas Artes Station",
+      "parking": "🚗 Parking available in the building",
+      "accessibility": "♿ Wheelchair accessible"
+    }
+  },
+  "footer": {
+    "copyright": "© 2024 INDIGO PRODUXION"
+  }
+}
