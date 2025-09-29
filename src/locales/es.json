@@ -5,7 +5,9 @@
     "portfolio": "Portfolio",
     "contact": "Contacto",
     "bookSession": "Reservar Sesión",
-    "toggleTheme": "Cambiar tema"
+    "toggleTheme": "Cambiar tema",
+    "menu": "Navegación",
+    "closeMenu": "Cerrar menú"
   },
   "hero": {
     "badge": "🎵 Estudio de Producción Audiovisual",

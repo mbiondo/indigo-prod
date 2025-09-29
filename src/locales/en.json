@@ -5,7 +5,9 @@
     "portfolio": "Portfolio",
     "contact": "Contact",
     "bookSession": "Book Session",
-    "toggleTheme": "Toggle theme"
+    "toggleTheme": "Toggle theme",
+    "menu": "Navigation",
+    "closeMenu": "Close menu"
   },
   "hero": {
     "badge": "🎵 Audiovisual Production Studio",
