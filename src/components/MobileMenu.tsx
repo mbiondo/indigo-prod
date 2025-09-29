@@ -68,23 +68,23 @@ export function MobileMenu({ isOpen, onToggle }: MobileMenuProps) {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="fixed top-0 right-0 h-full w-80 bg-background border-l border-border shadow-2xl z-50 md:hidden"
+              className="fixed top-0 right-0 h-full w-80 bg-background/98 backdrop-blur-xl border-l border-border/50 shadow-2xl z-50 md:hidden"
             >
               <div className="flex flex-col h-full">
                 {/* Header del menú */}
                 <div className="flex items-center justify-between p-6 border-b border-border">
-                  <h3 className="text-lg font-semibold">Navegación</h3>
+                  <h3 className="text-lg font-semibold">{t('navigation.menu')}</h3>
                   <button
                     onClick={onToggle}
                     className="p-2 rounded-lg hover:bg-muted transition-colors"
-                    aria-label="Cerrar menú"
+                    aria-label={t('navigation.closeMenu')}
                   >
                     <X className="w-5 h-5" />
                   </button>
                 </div>
 
                 {/* Enlaces de navegación */}
-                <nav className="flex-1 p-6">
+                <nav className="flex-1 p-6 bg-background/98 backdrop-blur-xl">
                   <ul className="space-y-4">
                     {navLinks.map((link, index) => (
                       <motion.li
@@ -119,7 +119,7 @@ export function MobileMenu({ isOpen, onToggle }: MobileMenuProps) {
                 </nav>
 
                 {/* CTA Button */}
-                <div className="p-6 border-t border-border">
+                <div className="p-6 border-t border-border bg-background/98 backdrop-blur-xl">
                   <motion.button
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
