@@ -1,5 +1,6 @@
 {
   "navigation": {
+    "home": "Inicio",
     "services": "Servicios",
     "portfolio": "Portfolio",
     "contact": "Contacto",
@@ -146,5 +147,36 @@
   },
   "footer": {
     "copyright": "© 2024 INDIGO PRODUXION"
+  },
+  "seo": {
+    "meta": {
+      "homeTitle": "INDIGO PRODUXION - Estudio de Producción Musical Profesional | Grabación, Mezcla y Masterización",
+      "homeDescription": "Estudio profesional de producción musical en Ciudad de México. Servicios de grabación, mezcla, masterización y producción audiovisual con equipos de alta gama y productores experimentados.",
+      "servicesTitle": "Servicios de Producción Musical | INDIGO PRODUXION",
+      "servicesDescription": "Servicios completos de producción musical: grabación profesional, mezcla, masterización, producción de videoclips y post-producción de audio en Ciudad de México.",
+      "portfolioTitle": "Portfolio de Trabajos | INDIGO PRODUXION",
+      "portfolioDescription": "Descubre nuestros mejores trabajos de producción musical, videoclips y proyectos audiovisuales. Más de 500 tracks producidos con artistas nacionales e internacionales.",
+      "contactTitle": "Contacto y Ubicación | INDIGO PRODUXION",
+      "contactDescription": "Visita nuestro estudio en Ciudad de México o contactanos para agendar tu sesión de grabación. Dirección, teléfonos y horarios de atención."
+    },
+    "keywords": {
+      "home": ["estudio de grabación CDMX", "producción musical México", "mezcla y masterización", "grabación profesional", "estudio musical Ciudad de México", "productor musical", "audio profesional", "estudio de grabación profesional"],
+      "services": ["servicios de grabación", "mezcla profesional", "masterización", "producción musical", "grabación de bandas", "podcast grabación", "videoclip producción", "post-producción audio"],
+      "portfolio": ["trabajos musicales", "portfolio producción", "demos musicales", "videoclips", "proyectos audiovisuales", "artistas grabados", "música producida"],
+      "contact": ["contacto estudio", "agendar sesión", "reservar estudio", "ubicación estudio CDMX", "teléfono estudio", "horarios grabación"]
+    },
+    "structured": {
+      "businessName": "INDIGO PRODUXION",
+      "businessType": "Estudio de Producción Musical",
+      "description": "Estudio profesional de producción musical especializado en grabación, mezcla, masterización y producción audiovisual",
+      "services": [
+        "Grabación Musical",
+        "Mezcla y Masterización", 
+        "Producción Musical",
+        "Post-Producción de Audio",
+        "Grabación de Podcast",
+        "Producción de Videoclips"
+      ]
+    }
   }
 }

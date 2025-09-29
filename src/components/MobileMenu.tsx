@@ -1,0 +1,140 @@
+'use client';
+
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Menu, X } from 'lucide-react';
+import { useTranslation } from '@/hooks/useTranslation';
+import { useSmoothScroll } from '@/hooks/useScrollAnimations';
+import { useActiveSection } from '@/hooks/useActiveSection';
+
+interface MobileMenuProps {
+  isOpen: boolean;
+  onToggle: () => void;
+}
+
+export function MobileMenu({ isOpen, onToggle }: MobileMenuProps) {
+  const { t } = useTranslation();
+  const { scrollToElement } = useSmoothScroll();
+  const activeSection = useActiveSection();
+
+  const navLinks = [
+    { id: 'hero', label: 'Home', translationKey: 'navigation.home' },
+    { id: 'services', label: 'Services', translationKey: 'navigation.services' },
+    { id: 'portfolio', label: 'Portfolio', translationKey: 'navigation.portfolio' },
+    { id: 'contact', label: 'Contact', translationKey: 'navigation.contact' },
+  ];
+
+  const handleNavClick = (sectionId: string) => {
+    scrollToElement(sectionId, 80);
+    onToggle(); // Cerrar menú después de navegar
+  };
+
+  const isLinkActive = (sectionId: string) => {
+    return activeSection === sectionId;
+  };
+
+  return (
+    <>
+      {/* Botón de menú hamburguesa */}
+      <button
+        onClick={onToggle}
+        className="md:hidden p-2 rounded-lg hover:bg-muted transition-colors"
+        aria-label="Toggle menu"
+      >
+        <motion.div
+          animate={{ rotate: isOpen ? 90 : 0 }}
+          transition={{ duration: 0.2 }}
+        >
+          {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        </motion.div>
+      </button>
+
+      {/* Overlay del menú */}
+      <AnimatePresence>
+        {isOpen && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={onToggle}
+              className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 md:hidden"
+            />
+
+            {/* Menú deslizable */}
+            <motion.div
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+              className="fixed top-0 right-0 h-full w-80 bg-background border-l border-border shadow-2xl z-50 md:hidden"
+            >
+              <div className="flex flex-col h-full">
+                {/* Header del menú */}
+                <div className="flex items-center justify-between p-6 border-b border-border">
+                  <h3 className="text-lg font-semibold">Navegación</h3>
+                  <button
+                    onClick={onToggle}
+                    className="p-2 rounded-lg hover:bg-muted transition-colors"
+                    aria-label="Cerrar menú"
+                  >
+                    <X className="w-5 h-5" />
+                  </button>
+                </div>
+
+                {/* Enlaces de navegación */}
+                <nav className="flex-1 p-6">
+                  <ul className="space-y-4">
+                    {navLinks.map((link, index) => (
+                      <motion.li
+                        key={link.id}
+                        initial={{ opacity: 0, x: 50 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: index * 0.1 }}
+                      >
+                        <button
+                          onClick={() => handleNavClick(link.id)}
+                          className={`w-full text-left p-3 rounded-lg transition-all duration-200 ${
+                            isLinkActive(link.id)
+                              ? 'bg-indigo-50 dark:bg-indigo-950 text-indigo-600 font-medium'
+                              : 'hover:bg-muted'
+                          }`}
+                        >
+                          <div className="flex items-center justify-between">
+                            <span>{t(link.translationKey)}</span>
+                            {isLinkActive(link.id) && (
+                              <motion.div
+                                layoutId="mobileActiveIndicator"
+                                className="w-2 h-2 bg-indigo-600 rounded-full"
+                                initial={false}
+                                transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                              />
+                            )}
+                          </div>
+                        </button>
+                      </motion.li>
+                    ))}
+                  </ul>
+                </nav>
+
+                {/* CTA Button */}
+                <div className="p-6 border-t border-border">
+                  <motion.button
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.4 }}
+                    onClick={() => handleNavClick('contact')}
+                    className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-semibold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-200"
+                  >
+                    {t('navigation.bookSession')}
+                  </motion.button>
+                </div>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+    </>
+  );
+}

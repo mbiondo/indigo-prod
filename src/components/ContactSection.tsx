@@ -9,7 +9,7 @@ export function ContactSection() {
   const { t } = useTranslation();
 
   return (
-    <section id="contacto" className="py-20 px-6 bg-background">
+    <section id="contact" className="py-20 px-6 bg-background">
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">{t('contact.title')}</h2>

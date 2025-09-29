@@ -1,0 +1,28 @@
+User-agent: *
+Allow: /
+
+# Bloquear páginas administrativas
+Disallow: /admin
+Disallow: /private
+Disallow: /api/
+
+# Permitir específicamente a Googlebot
+User-agent: Googlebot
+Allow: /
+Disallow: /admin
+Disallow: /private
+Disallow: /api/
+
+# Permitir específicamente a Bingbot
+User-agent: Bingbot
+Allow: /
+Disallow: /admin
+Disallow: /private
+Disallow: /api/
+
+# Sitemap
+Sitemap: https://indigoprod.com/sitemap.xml
+
+# Crawl-delay para bots específicos
+User-agent: *
+Crawl-delay: 1

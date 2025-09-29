@@ -3,6 +3,14 @@
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 import { useTranslation } from "@/hooks/useTranslation";
+import { 
+  SlideUp, 
+  StaggerContainer, 
+  StaggerItem,
+  HoverCard,
+  ScaleIn 
+} from "@/components/animations/ScrollAnimations";
+import { motion } from "framer-motion";
 
 export function PortfolioSection() {
   const { t } = useTranslation();
@@ -61,34 +69,68 @@ export function PortfolioSection() {
   return (
     <section id="portfolio" className="py-20 px-6">
       <div className="container mx-auto">
-        <div className="text-center mb-16">
+        {/* Título con animación */}
+        <SlideUp className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">{t('portfolio.title')}</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-balance">
             {t('portfolio.description')}
           </p>
-        </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        </SlideUp>
+        
+        {/* Grid de proyectos con animaciones escalonadas */}
+        <StaggerContainer 
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+          staggerDelay={0.15}
+        >
           {projects.map((project, index) => (
-            <div key={index} className="group relative overflow-hidden rounded-xl">
-              <div className="aspect-[4/3] bg-muted">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  width={400}
-                  height={300}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+            <StaggerItem key={index}>
+              <motion.div 
+                className="group relative overflow-hidden rounded-xl cursor-pointer"
+                whileHover={{ y: -8 }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+              >
+                <div className="aspect-[4/3] bg-muted">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    width={400}
+                    height={300}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                </div>
+                
+                {/* Overlay gradiente animado */}
+                <motion.div 
+                  className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
+                  initial={{ opacity: 0 }}
+                  whileHover={{ opacity: 1 }}
+                  transition={{ duration: 0.3 }}
                 />
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                <Badge className="bg-accent text-accent-foreground border-none mb-2">
-                  {project.category}
-                </Badge>
-                <h3 className="text-xl font-semibold">{project.title}</h3>
-              </div>
-            </div>
+                
+                {/* Contenido que aparece en hover */}
+                <motion.div 
+                  className="absolute bottom-0 left-0 right-0 p-6 text-white"
+                  initial={{ y: 20, opacity: 0 }}
+                  whileHover={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.3, ease: "easeOut" }}
+                >
+                  <Badge className="bg-white/20 backdrop-blur-sm text-white border-white/30 mb-2">
+                    {project.category}
+                  </Badge>
+                  <h3 className="text-xl font-semibold">{project.title}</h3>
+                </motion.div>
+                
+                {/* Efecto de brillo en hover */}
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                  initial={{ x: "-100%" }}
+                  whileHover={{ x: "100%" }}
+                  transition={{ duration: 0.6, ease: "easeInOut" }}
+                />
+              </motion.div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </div>
     </section>
   );

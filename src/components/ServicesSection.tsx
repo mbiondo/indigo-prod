@@ -3,6 +3,12 @@
 import { Card } from "@/components/ui/card";
 import { Headphones, Mic, Music, Volume2, Radio, Users, Video, Film, Camera, Edit, Waves } from "lucide-react";
 import { useTranslation } from "@/hooks/useTranslation";
+import { 
+  SlideUp, 
+  StaggerContainer, 
+  StaggerItem,
+  HoverCard 
+} from "@/components/animations/ScrollAnimations";
 
 export function ServicesSection() {
   const { t } = useTranslation();
@@ -77,32 +83,42 @@ export function ServicesSection() {
   ];
 
   return (
-    <section id="servicios" className="py-20 px-6 bg-background">
+    <section id="services" className="py-20 px-6 bg-background">
       <div className="container mx-auto">
-        <div className="text-center mb-16">
+        {/* Título con animación */}
+        <SlideUp className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">{t('services.title')}</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-balance">
             {t('services.description')}
           </p>
-        </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        </SlideUp>
+        
+        {/* Grid de servicios con animaciones escalonadas */}
+        <StaggerContainer 
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          staggerDelay={0.1}
+        >
           {services.map((service, index) => (
-            <Card 
-              key={index} 
-              className="p-6 hover:shadow-xl transition-all duration-300 hover:scale-105 bg-card border border-border group"
-            >
-              <div className={`w-16 h-16 bg-gradient-to-br ${service.gradient} rounded-xl flex items-center justify-center mb-4 text-white shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                {service.icon}
-              </div>
-              <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-indigo-700 transition-colors">
-                {service.title}
-              </h3>
-              <p className="text-muted-foreground leading-relaxed">
-                {service.description}
-              </p>
-            </Card>
+            <StaggerItem key={index}>
+              <HoverCard 
+                hoverScale={1.05}
+                className="h-full"
+              >
+                <Card className="p-6 h-full bg-card border border-border group transition-all duration-300 hover:shadow-xl">
+                  <div className={`w-16 h-16 bg-gradient-to-br ${service.gradient} rounded-xl flex items-center justify-center mb-4 text-white shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                    {service.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-indigo-700 transition-colors">
+                    {service.title}
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {service.description}
+                  </p>
+                </Card>
+              </HoverCard>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </div>
     </section>
   );

@@ -1,5 +1,6 @@
 {
   "navigation": {
+    "home": "Home",
     "services": "Services",
     "portfolio": "Portfolio",
     "contact": "Contact",
@@ -146,5 +147,36 @@
   },
   "footer": {
     "copyright": "© 2024 INDIGO PRODUXION"
+  },
+  "seo": {
+    "meta": {
+      "homeTitle": "INDIGO PRODUXION - Professional Music Production Studio | Recording, Mixing & Mastering",
+      "homeDescription": "Professional music production studio in Mexico City. Recording, mixing, mastering and audiovisual production services with high-end equipment and experienced producers.",
+      "servicesTitle": "Music Production Services | INDIGO PRODUXION",
+      "servicesDescription": "Complete music production services: professional recording, mixing, mastering, music video production and audio post-production in Mexico City.",
+      "portfolioTitle": "Portfolio of Works | INDIGO PRODUXION",
+      "portfolioDescription": "Discover our best music production work, music videos and audiovisual projects. Over 500 tracks produced with national and international artists.",
+      "contactTitle": "Contact & Location | INDIGO PRODUXION",
+      "contactDescription": "Visit our studio in Mexico City or contact us to schedule your recording session. Address, phone numbers and office hours."
+    },
+    "keywords": {
+      "home": ["recording studio CDMX", "music production Mexico", "mixing and mastering", "professional recording", "music studio Mexico City", "music producer", "professional audio", "professional recording studio"],
+      "services": ["recording services", "professional mixing", "mastering", "music production", "band recording", "podcast recording", "music video production", "audio post-production"],
+      "portfolio": ["musical works", "production portfolio", "music demos", "music videos", "audiovisual projects", "recorded artists", "produced music"],
+      "contact": ["studio contact", "schedule session", "book studio", "studio location CDMX", "studio phone", "recording hours"]
+    },
+    "structured": {
+      "businessName": "INDIGO PRODUXION",
+      "businessType": "Music Production Studio",
+      "description": "Professional music production studio specialized in recording, mixing, mastering and audiovisual production",
+      "services": [
+        "Music Recording",
+        "Mixing and Mastering",
+        "Music Production", 
+        "Audio Post-Production",
+        "Podcast Recording",
+        "Music Video Production"
+      ]
+    }
   }
 }
